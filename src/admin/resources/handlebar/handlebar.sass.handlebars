@@ -1,0 +1,81 @@
+{{#spritesheet}}
+.ico {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+[class*='ico_'] {
+  background-image: url('../sprite_images/{{image}}');
+  background-repeat: no-repeat;
+  background-size: {{px.width}} {{px.height}};
+}
+[class*='ico18_'] {
+  background-image: url('../sprite_images/{{image}}');
+  background-repeat: no-repeat;
+  background-size: {{px.width}} {{px.height}};
+}
+[class*='ico24_'] {
+  background-image: url('../sprite_images/{{image}}');
+  background-repeat: no-repeat;
+  background-size: {{px.width}} {{px.height}};
+}
+[class*='ico24-'] {
+  background-image: url('../sprite_images/{{image}}');
+  background-repeat: no-repeat;
+  background-size: {{px.width}} {{px.height}};
+}
+{{/spritesheet}}
+
+{{#sprites}}
+.{{name}} {
+  width: {{px.width}}; height: {{px.height}};
+  background-position: {{px.offset_x}} {{px.offset_y}};
+}
+{{/sprites}}
+
+
+
+/* retina_spritesheet */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+        {{#retina_spritesheet}}
+            [class*='ico_'] {
+              background-image: url('../sprite_images/{{image}}');
+              background-repeat: no-repeat;
+                background-size: calc({{px.width}} / 2) calc({{px.height}} / 2)  ;
+            }
+        {{/retina_spritesheet}}
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+        {{#retina_spritesheet}}
+            [class*='ico18_'] {
+              background-image: url('../sprite_images/{{image}}');
+              background-repeat: no-repeat;
+                background-size: calc({{px.width}} / 2) calc({{px.height}} / 2)  ;
+            }
+        {{/retina_spritesheet}}
+}
+
+/* retina_spritesheet */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+        {{#retina_spritesheet}}
+            [class*='ico24_'] {
+              background-image: url('../sprite_images/{{image}}');
+              background-repeat: no-repeat;
+                background-size: calc({{px.width}} / 2) calc({{px.height}} / 2)  ;
+            }
+        {{/retina_spritesheet}}
+}
+
+/* retina_spritesheet */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+        {{#retina_spritesheet}}
+            [class*='ico24-'] {
+              background-image: url('../sprite_images/{{image}}');
+              background-repeat: no-repeat;
+                background-size: calc({{px.width}} / 2) calc({{px.height}} / 2)  ;
+            }
+        {{/retina_spritesheet}}
+}

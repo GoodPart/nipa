@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- build:head -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nipa</title>
+    <link rel="stylesheet" href="../resources/font/inter/inter.css">
+    <link rel="stylesheet" href="../resources/style/admin.css">
+    <link rel="stylesheet" href="../resources/sprite_container/sprite_style/sp_all.css">
+</head>
+
+<body>
+    <div class="main" role="main">
+        <div class="sidebar"></div>
+        <div class="container">
+            <div class="topbar"></div>
+            
+<div class="wrapper wrapper--main">
+    <div class="form form__label--icon search">
+        <input type="text" placeholder="Search"><i class="ico18 ico18_search" style="width: 18px; display: inline-block;"></i>
+        
+        <div class="autocomplete">
+            <ul class="form form__list">
+                <li class="form__item select">
+                    인천광역시
+                </li>
+                <li class="form__item" style="height: 2000px;">
+                    광주광역시
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="form form__dialog main-film">
+        <div class="header dark">
+            <div class="title">
+                검색된 항공영상
+            </div>
+            <div class="functions">
+                <span>총 n건</span>
+            </div>
+        </div>
+        <!-- 
+            검색된 항공영상이 없을경우
+            .content에 .empty 클래스를 부여합니다
+        -->
+        <div class="content">
+            <ul class="form form__list">
+                <!-- 
+                    데이터가 없으면 empty css를 이용해 가상태그가 노출 됩니다.
+                -->
+             
+                <!-- 
+                    리스트 아이템
+                    상태 : 눈 뜸
+                 -->
+               <li class="form__item">
+                <div class="form form__check-item">
+                    <input type="checkbox" id="check1"><label for="check1">
+                        <div>
+                            <div class="function">
+                                <i class="ico18 ico18_check-false"></i>
+                                <i class="ico18 ico18_check-true"></i>
+                            </div>
+                            <div class="text">
+                                asd
+                            </div>
+                        </div>
+                        <button type="button" >
+                            <i class="ico24 ico24_eye"></i>
+                        </button>
+                    </label>
+                </div>
+               </li> 
+                <!--
+                    리스트 아이템
+                    상태 : 눈 감음
+                 -->
+               <li class="form__item">
+                <div class="form form__check-item">
+                    <input type="checkbox" id="check2"><label for="check2">
+                        <div>
+                            <div class="function">
+                                <i class="ico18 ico18_check-false"></i>
+                                <i class="ico18 ico18_check-true"></i>
+                            </div>
+                            <div class="text">
+                                asd
+                            </div>
+                        </div>
+                        <button class="disabled" type="button">
+                            <i class="ico24 ico24_eye-slash" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i>
+                        </button>
+                    </label>
+                </div>
+               </li> 
+               
+            </ul>
+        </div>
+        <div class="footer">
+            <!--
+                버튼 활성화 클래스 .confirm
+            -->
+            <button type="button" disabled class="">Detection</button>
+        </div>
+    </div>
+
+</div>    
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    // function toggle(_this) {
+    //     let checked = _this.classList.contains('active');
+    //     let getClassName = _this.children[0].className;
+    //     if(checked) {
+    //         _this.classList.remove('active')
+    //         _this.children[0].className = `${getClassName.split(' ')[0]} ${_this.children[0].dataset.uncheck}`
+    //     }else {
+    //         _this.classList.add('active')
+    //         _this.children[0].className = `${getClassName.split(' ')[0]} ${_this.children[0].dataset.check}`
+    //     }
+
+    // }
+</script>
+
+
+<!-- /build:script-->
+
+</html>

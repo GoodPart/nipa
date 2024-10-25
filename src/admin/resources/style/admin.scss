@@ -1,0 +1,111 @@
+@import "./valuable";
+@import "./mixin";
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+.ico, .ico18, .ico24 {
+    display: inline-block;
+}
+
+.wrapper {
+    
+}
+.container {
+    background-color: gray;
+}
+
+.wrapper--main {
+    position: relative;
+
+    .search {
+        position: absolute;
+        top: $mapTopPosition;
+        left: $mapLeftPosition;
+        width: 320px;
+        z-index: 100;
+
+        .autocomplete {
+            @include boxShadow();
+            position: absolute;
+            top: 60px;
+            left: 0;
+            padding: 4px 0;
+            width: 100%;
+            height: 183px;
+            overflow-y: auto;
+            background-color: #fff;
+            
+            & ::-webkit-scrollbar {
+                    width: 20px;
+                    height: 20px;
+                }
+            
+        }
+        .autocomplete ul{
+            gap: 0;
+        }
+        .autocomplete li{
+            padding: 2.5px 12px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #6e6e6e;
+        }
+        .autocomplete li.select{
+            background-color: #F0F4FF;
+            color: #2D2C38;
+        }
+    }
+
+    .main-film {
+        position: absolute;
+        top: 103px;
+        left: $mapLeftPosition;
+
+        .content {
+            position: relative;
+        }
+        .content.empty {
+            height: calc(100% - 50px);
+        }
+        .content.empty + .footer {
+            display: none;
+        }
+        .content.empty:after {
+            content: '항공영상을 조회할 도엽을 지도에서 선택해주세요.';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            z-index: 100;
+            line-height: 24px;
+            font-weight: bold;
+            color: #6f6f6f;
+            text-align: center;
+        }
+        .content.empty:before {
+            z-index: 90;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+    }
+}
+
+.main-film {
+    height: 740px;
+}
