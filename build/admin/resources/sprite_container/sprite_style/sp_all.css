@@ -37,31 +37,31 @@
 }
 .ico24_Info_circle {
   width: 24px; height: 24px;
-  background-position: 0px -48px;
+  background-position: 0px 0px;
 }
 .ico24_arrow-left {
   width: 24px; height: 24px;
-  background-position: 0px 0px;
+  background-position: -24px 0px;
 }
 .ico24_arrow-right {
   width: 24px; height: 24px;
-  background-position: -24px 0px;
+  background-position: 0px -24px;
 }
 .ico24_download-01--light {
   width: 24px; height: 24px;
-  background-position: 0px -24px;
+  background-position: -24px -24px;
 }
 .ico24_eye-slash {
   width: 24px; height: 24px;
-  background-position: -24px -24px;
+  background-position: -48px 0px;
 }
 .ico24_eye {
   width: 24px; height: 24px;
-  background-position: -48px 0px;
+  background-position: -48px -24px;
 }
 .ico24_file-delete-02--light {
   width: 24px; height: 24px;
-  background-position: -48px -24px;
+  background-position: 0px -48px;
 }
 .ico24_minus-01--light {
   width: 24px; height: 24px;
