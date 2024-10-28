@@ -1,0 +1,112 @@
+.wrapper--detection_result {
+    padding: 54px 39px 61px 60px;
+    height: calc(100% - 80px);
+
+
+    button {
+        padding: 13px 12px;
+        border-radius: 4px;
+        border: none;
+        color: #fff;
+        &.warring {
+            background-color: #FF5757;
+        }
+        &.undo {
+            background-color: #FFCE39;
+            color: #FF5757;
+        }
+
+    }
+
+
+    & > div + div {
+        margin-top: 24px;
+    }   
+
+    .wrapper__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .wrapper__header .header__item {
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+            gap: 12px;
+            span {
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 30px;
+            }
+            button {
+                padding: 0;
+                border-radius: 50px;
+            }
+        }
+        &:last-child {
+            gap: 24px;
+        }
+    }
+
+    .wrapper__content {
+        display: flex;
+        gap: 12px;
+        // height: inherit;
+        height: calc(100% - 41px - 24px);
+        &.wrapper__content--column {
+            flex-direction: column;
+        }
+    }
+
+    .info-view {
+        width: 288px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .map-view {
+        width: calc(100% - 288px - 12px);
+        height: calc(100% - 25px);
+        .header__item:first-child .state {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0 9px;
+            border-radius: 23px;
+            &.completed {
+                color: #7885F7;
+                background-color: rgba(120, 163,247, 0.15);
+            }
+            &.error {
+                color: #FF857D;
+                background-color: rgba(247, 143,120, 0.15);
+            }
+            &.processing{
+                color: #FF7D34;
+                background-color: rgba(255, 184, 0, 0.15);
+            }
+        }
+        .header__item:last-child {
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #4f4f4f;
+                background-color: #fff;
+                padding: 0;
+                border-radius: 50px;
+            }
+            button i {
+                margin: 4px;
+            }
+        }
+    }
+    .map__viwer {
+        margin-top: 17px;
+        height: inherit;
+        background-color: gray;
+    }
+}
