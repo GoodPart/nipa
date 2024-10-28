@@ -24,7 +24,7 @@ const DEV_PATH = {
         SPRITE : './src/admin/resources/sprite_container/sprite-images',
         HANDLEBAR: './src/admin/resources/handlebar/handlebar.sass.handlebars',
         SCRIPT: './src/resources/script',
-        IMAGES: './src/resources/images',
+        IMAGES: './src/admin/resources/images',
         STYLE: './src/resources/style',
     }
 }
@@ -35,7 +35,7 @@ const BUILD_PATH = {
         SPRITE : './build/public/sprite_images',
         SPRITE_STYLE : './build/public/sprite_style',
         SCRIPT: './build/resources/script',
-        IMAGES: './build/resources/images',
+        IMAGES: './build/admin/resources/images',
         STYLE: './build/resources/style',
     }
 }
@@ -164,6 +164,16 @@ gulp.task('copy-sprite-into-build', () => {
     })
 })
 
+// 이미지 폴더
+gulp.task('images', () => {
+    return new Promise(resolve => {
+        
+        gulp.src(`${DEV_PATH.RESOURCES.IMAGES}/**/*`)
+            .pipe(gulp.dest(`${BUILD_PATH.RESOURCES.IMAGES}`))
+        resolve();
+    })
+})
+
 gulp.task('font', () => {
     return new Promise(resolve => {
         
@@ -205,6 +215,9 @@ gulp.task('watch', () => {
         //sprite
         gulp.watch(`${DEV_PATH.ADMIN}/resources/sprite_container/sprite-images/*`, gulp.series(['sprite', 'copy-sprite-into-build']))
 
+        //images
+        gulp.watch(`${DEV_PATH.RESOURCES.IMAGES}/**/*`, gulp.series(['images']));
+
 
         resolve();
     })
@@ -213,6 +226,7 @@ gulp.task('watch', () => {
 var allSeries = gulp.series([
     'clean',
     'font',
+    'images',
     'sprite',
     'copy-sprite-into-build',
     'html',

@@ -18,18 +18,725 @@
             <div class="topbar"></div>
             
 <div class="wrapper wrapper--main">
+
+    <!--
+        딤드 팝업 : 경고창
+    -->
+        <dialog >
+            <div class="form form__dialog">
+                <div class="header">
+                    <div class="title">영상 확인요청</div>
+                </div>
+                <div class="content">
+                    <div class="system_state">
+                        <div class="symbol">
+                            <img src="../resources/images/ico_state_03.png" alt="">
+                        </div>
+                        <div class="state_txt">
+                            영상은 2개까지 선택가능합니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <button class="confirm">OK</button>
+                </div>
+            </div>
+            <br />
+            
+        </dialog>
+    <!--
+        딤드 팝업 : 경고창
+    -->
+
+    <!--
+        딤드 팝업 : 변화탐지(New Detection)
+    -->
+        <dialog class="dialog--detection">
+            <div class="form form__dialog">
+                <div class="header">
+                    <div class="title">New Detection</div>
+                </div>
+                <div class="content content__column">
+
+                    <div class="content__item">
+                        <div class="content__title">
+                            Detection Info
+                        </div>
+                        <div class="container">
+                            <div class="form__input">
+                                <p class="input__title">Detection Tool</p>
+                                <input class="input__form" type="text" value="변화유무 탐지 V 1.0" disabled>
+                            </div>
+                            <div class="form__input">
+                                <p class="input__title">Selected Detection file</p>
+                                <input class="input__form" type="text" value="xxxxx도엽_23년.tif" disabled>
+                                <input class="input__form" type="text" value="xxxxx도엽_24년.tif" disabled>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content__item">
+                        <div class="content__title">
+                            Detection Setting
+                        </div>
+                        <div class="container">
+                            <div class="form__input">
+                                <p class="input__title">Detection Name</p>
+                                <input class="input__form" type="text" value="" placeholder="Enter detection name">
+                            </div>
+                            <div class="form__input">
+                                <div class="input__title">
+                                    <p>Choose Detection Object(s)</p>
+                                    <div class="function">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="check1"><label for="check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        전체 선택
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <!-- <input type="text" id="checkbox2"><label for="checkbox2">전체 선택</label></label> -->
+                                    </div>
+                                </div>
+                                <div class="form form__grid-checkbox">
+                                    <ul class="wrapper">
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk1" checked><label for="chk1">도로</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk2"><label for="chk2">인도</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk3"><label for="chk3">안전지대</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk4" checked><label for="chk4">건물</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk5"><label for="chk5">온실</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk6"><label for="chk6">묘지</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk7"><label for="chk7">공동묘지</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk8" checked><label for="chk8">논</label>
+                                        </li>
+
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk9"><label for="chk9">밭</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk10"><label for="chk10">과수원</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk11"><label for="chk11">산림</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk12"><label for="chk12">목초지</label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk13"><label for="chk13">수계</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="function-item both">
+                        <button>Cancle</button>
+                        <button class="confirm">Detect</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    <!--
+        딤드 팝업 : 다운로드 팝업
+    -->
+        <dialog class="dialog--download" >
+            <div class="form form__dialog">
+                <div class="header">
+                    <div class="title">Download</div>
+                </div>
+                <div class="content">
+                    <ul class="form form__list">
+                        <!-- 
+                                        리스트 아이템
+                                        상태 : 눈 뜸
+                                     -->
+                        <li class="form__item">
+                            <div class="form form__check-item">
+                                <input type="checkbox" id="down_check1"><label for="down_check1">
+                                    <div>
+                                        <div class="function">
+                                            <i class="ico18 ico18_check-false"></i>
+                                            <i class="ico18 ico18_check-true"></i>
+                                        </div>
+                                        <div class="text">
+                                            Legend of Detection
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <!--
+                                        리스트 아이템
+                                        상태 : 눈 감음
+                                     -->
+                        <li class="form__item">
+                            <div class="form form__check-item">
+                                <input type="checkbox" id="down_check2"><label for="down_check2">
+                                    <div>
+                                        <div class="function">
+                                            <i class="ico18 ico18_check-false"></i>
+                                            <i class="ico18 ico18_check-true"></i>
+                                        </div>
+                                        <div class="text">
+                                            Legend of Changes
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    
+                    </ul>
+                </div>
+                <div class="footer">
+                    <div class="function-item both">
+                        <button>Cancle</button>
+                        <button class="confirm">Download</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    <!--
+        딤드 팝업 : 다운로드 팝업
+    -->
+
+    <!--
+        딤드 팝업 : 레퍼런스 추가
+    -->
+        <dialog class="dialog--addReference"  >
+            <div class="form form__dialog">
+                <div class="header">
+                    <div class="title">Add Referene Data</div>
+                </div>
+                <div class="content content__column">
+                    <div class="content__item">
+                        <div class="form form__label--icon search">
+                            <input type="text" placeholder="Search"><i class="ico18 ico18_search"
+                                style="width: 18px; display: inline-block;"></i>
+                        </div>
+                        <button class="confirm">검색</button>
+                    </div>
+                    <div class="content__item content__item--row">
+                        <div>
+                            <div class="header">
+                                <div class="title">
+                                    Data List
+                                </div>
+                                <div class="functions">
+                                    <span>총 n건</span>
+                                </div>
+                            </div>
+                            <div class="scroll-wrapper">
+                                <ul class="form form__list">
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="bridge">
+                            <button type="button" class="add">Add <i class="ico24 ico24_arrow-right"></i></button>
+                            <button type="button" class="delete">Delete <i class="ico24 ico24_arrow-left"></i></button>
+
+                        </p>
+                        <div>
+                            <div class="header">
+                                <div class="title">
+                                    Selected List
+                                </div>
+                                <div class="functions">
+                                    <span>총 n건</span>
+                                </div>
+                            </div>
+                            <div class="scroll-wrapper">
+                                <ul class="form form__list">
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check1"><label for="refer_check1">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="form__item">
+                                        <div class="form form__check-item">
+                                            <input type="checkbox" id="refer_check2"><label for="refer_check2">
+                                                <div>
+                                                    <div class="function">
+                                                        <i class="ico18 ico18_check-false"></i>
+                                                        <i class="ico18 ico18_check-true"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        asd
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="function-item both">
+                        <button>Cancle</button>
+                        <button class="confirm">Add</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    <!--
+        딤드 팝업 : 레퍼런스 추가
+    -->
+
+
+        <button style="position: absolute; top: 100px; left: 100;">Show the dialog</button>
+        <button class="show_detection" style="position: absolute; top: 120px; left: 100;">Show the New detection</button>
+        <button class="show_download" style="position: absolute; top: 140px; left: 100;">Show the download</button>
+        <button class="show_reference" style="position: absolute; top: 160px; left: 100;">Show the Reference</button>
+
+
+
+    <!--
+       검색 영역      
+       .form.form__label--icon.search에
+       .on 추가시 자동완성 폼 노출
+    -->
     <div class="form form__label--icon search">
         <input type="text" placeholder="Search"><i class="ico18 ico18_search" style="width: 18px; display: inline-block;"></i>
         
         <div class="autocomplete">
-            <ul class="form form__list">
-                <li class="form__item select">
-                    인천광역시
-                </li>
-                <li class="form__item" style="height: 2000px;">
-                    광주광역시
-                </li>
-            </ul>
+            <div class="wrap">
+                <ul class="form form__list">
+                    <li class="form__item select">
+                        인천광역시
+                    </li>
+                    <li class="form__item">
+                        광주광역시
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -46,12 +753,8 @@
             검색된 항공영상이 없을경우
             .content에 .empty 클래스를 부여합니다
         -->
-        <div class="content">
+        <div class="content empty">
             <ul class="form form__list">
-                <!-- 
-                    데이터가 없으면 empty css를 이용해 가상태그가 노출 됩니다.
-                -->
-             
                 <!-- 
                     리스트 아이템
                     상태 : 눈 뜸
@@ -101,12 +804,12 @@
         </div>
         <div class="footer">
             <!--
-                버튼 활성화 클래스 .confirm
+                1. 버튼 활성화 클래스 .confirm 추가
+                2. disabled 제거
             -->
             <button type="button" disabled class="">Detection</button>
         </div>
     </div>
-
 </div>    
 
 
@@ -115,19 +818,63 @@
 </body>
 
 <script>
+    const dialog = document.querySelector("dialog");
+    const showButton = document.querySelector("dialog + button");
+    const closeButton = document.querySelector("dialog button");
 
-    // function toggle(_this) {
-    //     let checked = _this.classList.contains('active');
-    //     let getClassName = _this.children[0].className;
-    //     if(checked) {
-    //         _this.classList.remove('active')
-    //         _this.children[0].className = `${getClassName.split(' ')[0]} ${_this.children[0].dataset.uncheck}`
-    //     }else {
-    //         _this.classList.add('active')
-    //         _this.children[0].className = `${getClassName.split(' ')[0]} ${_this.children[0].dataset.check}`
-    //     }
+    // "Show the dialog" button opens the dialog modally
+    showButton.addEventListener("click", () => {
+        dialog.showModal();
+    });
 
-    // }
+    // "Close" button closes the dialog
+    closeButton.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    const dialogNewDetection = document.querySelector("dialog.dialog--detection");
+    const showButton1 = document.querySelector(".show_detection");
+    const closeButton1 = dialogNewDetection.querySelector("button");
+
+    // "Show the dialog" button opens the dialog modally
+    showButton1.addEventListener("click", () => {
+        dialogNewDetection.showModal();
+    });
+
+    // "Close" button closes the dialog
+    closeButton1.addEventListener("click", () => {
+        dialogNewDetection.close();
+    });
+
+    const dialogDownload = document.querySelector("dialog.dialog--download");
+    const showButton2 = document.querySelector(".show_download");
+    const closeButton2 = dialogDownload.querySelector("button");
+
+    // "Show the dialog" button opens the dialog modally
+    showButton2.addEventListener("click", () => {
+        dialogDownload.showModal();
+    });
+
+    // "Close" button closes the dialog
+    closeButton2.addEventListener("click", () => {
+        dialogDownload.close();
+    });
+
+
+    //show_referene
+    const dialogReference = document.querySelector("dialog.dialog--addReference");
+    const showButton3 = document.querySelector(".show_reference");
+    const closeButton3 = dialogReference.querySelector("button");
+
+    // "Show the dialog" button opens the dialog modally
+    showButton3.addEventListener("click", () => {
+        dialogReference.showModal();
+    });
+
+    // "Close" button closes the dialog
+    closeButton3.addEventListener("click", () => {
+        dialogReference.close();
+    });
 </script>
 
 

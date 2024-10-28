@@ -1,0 +1,211 @@
+@import "./mixin.scss";
+
+dialog {
+    overflow: hidden;
+    @include boxShadow();
+    border-radius: 12px;
+    border: none;
+    // 최소값
+    padding: 0;
+    min-width: 400px;
+    min-height: 318px;
+    height: 318px;
+
+    &::backdrop {
+        background: rgba(0,0,0,0.8);
+    }
+
+    .form.form__dialog {
+        box-shadow: none;
+        min-width: inherit;
+        width: inherit;
+        height: 100%;
+    }
+
+    .form.form__dialog .content {
+        height: calc(100% - 57px - 96px);
+    }
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    // 상태
+    .system_state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+    .system_state .symbol {
+
+    }
+    .system_state .state_txt {
+        padding: 12px 20px;
+        width: 100%;
+        background-color: #FDE9ED;
+        color: #F55573;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+
+    .form.form__dialog .footer {
+        height: 96px;
+    }
+    .footer {
+        background-color: #F3F3F3;
+    }
+
+    //detection
+    &.dialog--detection {
+        width: 636px;
+        height: 898px;
+        // height: auto;
+
+        .function .form__check-item {
+            input[type='checkbox'] + label {
+                padding: 2px 0;
+            }
+            input[type='checkbox']:checked + label {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.dialog--download {
+        width: 274px;
+        height: 244px;
+        min-width: initial;
+        min-height: initial;
+
+        &::backdrop {
+            display: none;
+        }
+
+        .content {
+            justify-content: flex-start;
+            height: calc(100% - 57px - 72px) !important;
+        }
+
+        .form__list {
+            width: 100%;
+        }
+
+        .footer {
+            height: 72px !important; 
+        }
+    }
+
+
+    &.dialog--addReference {
+        z-index: 200;
+        width: 800px;
+        height: 825px;
+
+        .form {
+            .content {
+                overflow-y: hidden;
+
+                .content__item {
+                    padding: 0 12px;
+                }
+                .content__item:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 12px;
+                }
+                .content__item:last-child {
+                    margin-top: 24px;
+                }
+            }
+    
+            .search {
+                flex: 1;
+                position: relative;
+                top: inherit;
+                left: inherit;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #757575;
+            }
+
+
+            .content__item--row {
+                justify-content: space-between;
+                gap: 24px;
+
+                & > div {
+                    flex: 1;
+                }
+
+                & > .bridge {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    justify-content: center;
+
+                    button {
+                        padding: 6px 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 77px;
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                    button.add {
+                        padding-left: 18.5px;
+                    }
+                    button.delete {
+                        padding-right: 10px;
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                & > div .scroll-wrapper {
+                    overflow-y: auto;
+                    height: 516px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #e0e0e0;
+                    border-radius: 0;
+                    // @include scrollStyle($type : 2);
+                }
+
+                .header {
+                    display: flex;
+                    justify-content : space-between;
+                    padding: 6px 0;
+                    background-color: #fff;
+                }
+             
+                .header .title {
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 1.4;
+                }
+                .header .functions span {
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+
+            .form__list {
+                padding: 12px;
+                gap: 8px;
+            }
+            .form__list input + label .text {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+        }
+
+    }
+}
