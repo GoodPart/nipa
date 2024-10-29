@@ -9,26 +9,39 @@ table.dataTable>thead>tr>td {
         display: block;
         padding: 12px 0;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 400;
     }
 }
 table.dataTable>tbody>tr {
     height: 52px;
-
+    position: relative;
     td {
+        position: relative;
         vertical-align: middle;
+
     }
 }
 table.dataTable>tbody>tr>th,
 table.dataTable>tbody>tr>td {
-    // padding: 12px ;
+    padding: 0 12px ;
     height: 52px;
+
+    .state-symbol {
+        padding: 0;
+    }
 
     .icon {
         display: flex;
         align-items: center;
         gap: 10px;
         height: 100%;
+
+        &--border {
+            display: inline-block;
+            padding: 2px;
+            border : 1px solid #bdbdbd;
+            border-radius: 50px;
+        }
     }
 }
 
@@ -36,23 +49,67 @@ table.dataTable.stripe>tbody>tr:nth-child(odd)>*,
 table.dataTable.display>tbody>tr:nth-child(odd)>* {
     box-shadow: none;
 }
+table.dataTable.row-border > tbody > tr > *, table.dataTable.display > tbody > tr > * {
+    border-top: none;
+}
+table.dataTable > tbody > tr > td:first-child {
+    min-width: 454px;
+
+    div {
+        @include ellipse();
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80%;
+    }
+    
+}
+
+
+div.dt-container .dt-paging .dt-paging-button {
+    background-color: #3056d3;
+}
+
 
 .table-wrap {
     position: relative;
     padding: 12px;
     background-color: #fff;
+    border-radius: 8px;
+
     .function_button {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 17px;
+        right: 12px;
+        background-color: #3056d3;
+        font-weight: normal;
+        height: 48px;
+        width: 107px;
+        font-size: 16px;
+    }
+
+    .dt-info {
+        margin-left: 20px;
+    }
+    .dt-paging {
+        margin-right: 20px;
     }
 }
 
 .dt-length {
+    margin-left: 24px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     gap: 10px;
+
+    select {
+        width: 70px;
+        height: 33px;
+    }
+}
+div.dt-container select.dt-input {
+    padding: 0 15px;
 }
 
 .table-wrap {

@@ -1,9 +1,36 @@
 @import "./mixin.scss";
 
+.state-symbol {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 9px;
+    border-radius: 23px;
+    line-height: 24px;
+    text-align: center;
+    &.completed {
+        color: #7885F7;
+        background-color: rgba(120, 163,247, 0.15);
+    }
+    &.error {
+        color: #FF857D;
+        background-color: rgba(247, 143,120, 0.15);
+    }
+    &.processing{
+        color: #FF7D34;
+        background-color: rgba(255, 184, 0, 0.15);
+    }
+    &.stop_processing {
+        color: #9A9A9A;;
+        background-color: rgba(185, 185, 185, 0.15);
+    }
+}
 
 .wrapper--detection_result {
     padding: 54px 39px 61px 60px;
     height: calc(100% - 80px);
+    .search {
+        width: 320px;
+    }
 
     .drag-item {
         z-index: 100;
@@ -65,7 +92,7 @@
 
         &:first-child {
             gap: 12px;
-            span:not(.state) {
+            span:not(.state-symbol) {
                 @include ellipse();
                 font-size: 28px;
                 font-weight: bold;
@@ -237,26 +264,7 @@
     .map-view {
         width: calc(100% - 288px - 12px);
         height: calc(100% - 25px);
-        .header__item:first-child .state {
-            font-size: 16px;
-            font-weight: 500;
-            padding: 0 9px;
-            border-radius: 23px;
-            padding: 0 11px;
-            line-height: 24px;
-            &.completed {
-                color: #7885F7;
-                background-color: rgba(120, 163,247, 0.15);
-            }
-            &.error {
-                color: #FF857D;
-                background-color: rgba(247, 143,120, 0.15);
-            }
-            &.processing{
-                color: #FF7D34;
-                background-color: rgba(255, 184, 0, 0.15);
-            }
-        }
+        
         .header__item:last-child {
             button {
                 cursor: pointer;
