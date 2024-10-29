@@ -4,7 +4,7 @@
     <!--
         딤드 팝업 : 경고창
     -->
-        <dialog >
+        <dialog class="dialog--alert" >
             <div class="form form__dialog">
                 <div class="header">
                     <div class="title">영상 확인요청</div>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <button class="confirm">OK</button>
+                    <button class="confirm flex">OK</button>
                 </div>
             </div>
             <br />
@@ -682,7 +682,7 @@
                 </div>
                 <div class="footer">
                     <div class="function-item both">
-                        <button>Cancle</button>
+                        <button class="close">Cancle</button>
                         <button class="confirm">Add</button>
                     </div>
                 </div>
@@ -693,10 +693,21 @@
     -->
 
 
-        <button style="position: absolute; top: 100px; left: 100;">Show the dialog</button>
-        <button class="show_detection" style="position: absolute; top: 120px; left: 100;">Show the New detection</button>
-        <button class="show_download" style="position: absolute; top: 140px; left: 100;">Show the download</button>
-        <button class="show_reference" style="position: absolute; top: 160px; left: 100;">Show the Reference</button>
+    <!--  -->
+        <ul class="form" style="position: absolute; top: 100px; right: 100px; padding: 12px; display: flex;flex-direction: column; gap: 12px;">
+            <li>
+                <button class="dialog_alert">Show alert dialog</button>
+            </li>
+            <li>
+                <button class="show_detection" style="top: 120px">Show the New detection</button>
+            </li>
+            <li>
+                <button class="show_download" style="top: 140px">Show the download</button>
+            </li>
+            <li>
+                <button class="show_reference" style="top: 160px">Show the Reference</button>
+            </li>
+        </ul>
 
 
 
@@ -735,7 +746,7 @@
             검색된 항공영상이 없을경우
             .content에 .empty 클래스를 부여합니다
         -->
-        <div class="content empty">
+        <div class="content">
             <ul class="form form__list">
                 <!-- 
                     리스트 아이템
@@ -743,14 +754,14 @@
                  -->
                <li class="form__item">
                 <div class="form form__check-item">
-                    <input type="checkbox" id="check1"><label for="check1">
+                    <input type="checkbox" id="film_check1"><label for="film_check1">
                         <div>
                             <div class="function">
                                 <i class="ico18 ico18_check-false"></i>
                                 <i class="ico18 ico18_check-true"></i>
                             </div>
                             <div class="text">
-                                asd
+                                test123
                             </div>
                         </div>
                         <button type="button" >
@@ -765,14 +776,14 @@
                  -->
                <li class="form__item">
                 <div class="form form__check-item">
-                    <input type="checkbox" id="check2"><label for="check2">
+                    <input type="checkbox" id="film_check2" checked><label for="film_check2">
                         <div>
                             <div class="function">
                                 <i class="ico18 ico18_check-false"></i>
                                 <i class="ico18 ico18_check-true"></i>
                             </div>
                             <div class="text">
-                                asd
+                                test456
                             </div>
                         </div>
                         <button class="disabled" type="button">
@@ -781,6 +792,7 @@
                     </label>
                 </div>
                </li> 
+              
                
             </ul>
         </div>
@@ -789,18 +801,19 @@
                 1. 버튼 활성화 클래스 .confirm 추가
                 2. disabled 제거
             -->
-            <button type="button" disabled class="">Detection</button>
+            <button type="button" disabled class="flex">Detection</button>
         </div>
     </div>
+    
 </div>    
 
 <!-- /build:content -->
 
 <!-- build:script -->
 <script>
-    const dialog = document.querySelector("dialog");
-    const showButton = document.querySelector("dialog + button");
-    const closeButton = document.querySelector("dialog button");
+    const dialog = document.querySelector("dialog.dialog--alert");
+    const showButton = document.querySelector(".dialog_alert");
+    const closeButton = dialog.querySelector("button");
 
     // "Show the dialog" button opens the dialog modally
     showButton.addEventListener("click", () => {
@@ -844,7 +857,7 @@
     //show_referene
     const dialogReference = document.querySelector("dialog.dialog--addReference");
     const showButton3 = document.querySelector(".show_reference");
-    const closeButton3 = dialogReference.querySelector("button");
+    const closeButton3 = dialogReference.querySelector("button.close");
 
     // "Show the dialog" button opens the dialog modally
     showButton3.addEventListener("click", () => {

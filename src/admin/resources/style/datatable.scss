@@ -1,0 +1,70 @@
+@import "./mixin";
+
+table.dataTable>thead>tr>th,
+table.dataTable>thead>tr>td {
+    padding: 4px 0;
+    text-align: center;
+
+    .dt-column-title {
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+table.dataTable>tbody>tr {
+    height: 52px;
+
+    td {
+        vertical-align: middle;
+    }
+}
+table.dataTable>tbody>tr>th,
+table.dataTable>tbody>tr>td {
+    // padding: 12px ;
+    height: 52px;
+
+    .icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+    }
+}
+
+table.dataTable.stripe>tbody>tr:nth-child(odd)>*,
+table.dataTable.display>tbody>tr:nth-child(odd)>* {
+    box-shadow: none;
+}
+
+.table-wrap {
+    position: relative;
+    padding: 12px;
+    background-color: #fff;
+    .function_button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.dt-length {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-wrap {
+    * {
+        color: #64748B;
+        border-color: #E2E8F0 !important;
+    }
+    .dt-scroll-headInner {
+        border-top: 1px solid red;
+    }
+}
+
+div.dt-scroll {
+    @include scrollStyle($type : 2);
+}

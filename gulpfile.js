@@ -184,6 +184,15 @@ gulp.task('font', () => {
     })
 })
 
+gulp.task('js', () => {
+    return new Promise(resolve => {
+        gulp.src(`${DEV_PATH.ADMIN}/resources/js/**/*`)
+        .pipe(gulp.dest(`${BUILD_PATH.ADMIN}/resources/js`))
+        
+        resolve();
+    })
+})
+
 gulp.task('browserSync', () => {
     return new Promise(resolve => {
         let bs = browserSync;
@@ -226,6 +235,7 @@ gulp.task('watch', () => {
 var allSeries = gulp.series([
     'clean',
     'font',
+    'js',
     'images',
     'sprite',
     'copy-sprite-into-build',

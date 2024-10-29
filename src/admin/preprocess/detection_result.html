@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nipa</title>
     <link rel="stylesheet" href="../resources/font/inter/inter.css">
+    <link rel="stylesheet" href="../resources/js/datatables/datatables.css">
     <link rel="stylesheet" href="../resources/style/admin.css">
     <link rel="stylesheet" href="../resources/sprite_container/sprite_style/sp_all.css">
 </head>
@@ -72,6 +73,9 @@
                             </div>
                             <div class="desc">
                                 <span>xxxxx도엽_23년.tif</span>
+                                <div class="function">
+                                    <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -82,21 +86,24 @@
                             </div>
                             <div class="desc">
                                 <span>xxxxx도엽_24년.tif</span>
+                                <div class="function">
+                                    <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                                </div>
                             </div>
                         </div>
                     </li>
-                    <li class="form__item">
+                    <li class="form__item form__item--result">
                         <div class="form__title_desc">
                             <div class="title">
                                 <span>Detection Result</span>
                                 <div class="function">
-                                    <button type="button"><i class="ico24 ico24_download-01--light"></i></button>
+                                    <button type="button" class="show"><i class="ico24 ico24_download-01--light"></i></button>
                                 </div>
                             </div>
                             <div class="desc">
                                 <span>xxxxx도엽_23_24.tif</span>
                                 <div class="function">
-                                    <button type="button"><i class="ico24 ico24_eye"></i></button>
+                                    <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -122,29 +129,136 @@
                             </div>
                         </div>
                     </li>
-                    <li class="form__item">
-                        <div class="form__title_desc">
-                            <div class="title">
-                                <span>Detection Result</span>
-                                <div class="function">
-                                    <button type="button"><i class="ico24 ico24_download-01--light"></i></button>
-                                </div>
-                            </div>
-                            <div class="desc">
-                                <span>xxxxx도엽_23_24.tif</span>
-                                <div class="function">
-                                    <button type="button"><i class="ico24 ico24_eye"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                
                 </ul>
             </div>
             <div class="info-view__item info-view__item--2">
-                asd
+                <div class="form form__list">
+                    <div class="form__item">
+                        <div class="form__title_desc">
+                            <div class="title">
+                                <span>Legend of Detection</span>
+                                <div class="function">
+                                    <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <div class="form form__grid-checkbox">
+                                    <ul class="wrapper">
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk1" checked>
+                                            <label for="chk1">
+                                                <div class="legend-label" style="background-color: #000;"></div>
+                                                <div class="legend-txt">목초지</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk2"><label for="chk2">
+                                                <div class="legend-label" style="background-color: #6C6C6C;"></div>
+                                                <div class="legend-txt">묘지</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk3"><label for="chk3">
+                                                <div class="legend-label" style="background-color: #3399FF;"></div>
+                                                <div class="legend-txt">수계</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk4" checked><label for="chk4">
+                                                <div class="legend-label" style="background-color: #BB3C3C;"></div>
+                                                <div class="legend-txt">산림</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk5"><label for="chk5">
+                                                <div class="legend-label" style="background-color: #008CBD;"></div>
+                                                <div class="legend-txt">공동묘지</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk6"><label for="chk6">
+                                                <div class="legend-label" style="background-color: #FF0000;"></div>
+                                                <div class="legend-txt">온실</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk7"><label for="chk7">
+                                                <div class="legend-label" style="background-color: #AD00C8;"></div>
+                                                <div class="legend-txt">도로</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk8" checked><label for="chk8">
+                                                <div class="legend-label" style="background-color: #8B4513;"></div>
+                                                <div class="legend-txt">건물</div>
+                                            </label>
+                                        </li>
+                                
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk9"><label for="chk9">
+                                                <div class="legend-label" style="background-color: #FF0099;"></div>
+                                                <div class="legend-txt">안전지대</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk10"><label for="chk10">
+                                                <div class="legend-label" style="background-color: #FFA600;"></div>
+                                                <div class="legend-txt">밭</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk11"><label for="chk11">
+                                                <div class="legend-label" style="background-color: #FF6200;"></div>
+                                                <div class="legend-txt">과수원</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk12"><label for="chk12">
+                                                <div class="legend-label" style="background-color: #009600;"></div>
+                                                <div class="legend-txt">인도</div>
+                                            </label>
+                                        </li>
+                                        <li class="grid__item">
+                                            <input type="checkbox" id="chk13"><label for="chk13">
+                                                <div class="legend-label" style="background-color: #3700FF;"></div>
+                                                <div class="legend-txt">논</div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="info-view__item info-view__item--3">
-                asd
+                <div class="form form__list">
+                    <div class="form__item">
+                        <div class="form__title_desc">
+                            <div class="title">
+                                <span>Legend of Changes</span>
+                                <div class="function">
+                                    <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <div class="legend-viwer">
+                                    <div class="legend-color"></div>
+                                    <div class="legend-number">
+                                        <ul>
+                                            <li>5</li>
+                                            <li>4</li>
+                                            <li>3</li>
+                                            <li>2</li>
+                                            <li>1</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="info-view__item info-view__item--4">
                 <div>
@@ -152,21 +266,33 @@
                         <li class="form__item">
                             <div class="form__title_desc">
                                 <div class="title">
-                                    <span>Detection Result</span>
+                                    <span>Reference Data</span>
                                     <div class="function">
-                                        <button type="button"><i class="ico24 ico24_system"></i></button>
+                                        <button type="button" class="show"><i class="ico24 ico24_system"></i></button>
                                     </div>
                                 </div>
                                 <div class="desc">
                                     <span>xxxxx도엽_23_24.tif</span>
                                     <div class="function">
-                                        <button type="button"><i class="ico24 ico24_eye"></i></button>
+                                        <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
                                     </div>
                                 </div>
                                 <div class="desc">
                                     <span>xxxxx도엽_23_24.tif</span>
                                     <div class="function">
-                                        <button type="button"><i class="ico24 ico24_eye"></i></button>
+                                        <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <span>xxxxx도엽_23_24.tif</span>
+                                    <div class="function">
+                                        <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <span>xxxxx도엽_23_24.tif</span>
+                                    <div class="function">
+                                        <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
                                     </div>
                                 </div>
                                 <div class="desc">
@@ -185,21 +311,58 @@
         <div class="content__item map-view">
             <div class="wrapper__header">
                 <div class="header__item">
+                    <!--
+                        .state.error
+                        .state.warring
+                        .state.completed
+                        .state.processing
+                    -->
                     <span class="title">영덕지역 01_1_탐지_20240221172430</span> <span class="state error">Error</span>
                 </div>
                 <div class="header__item">
                     <button type="button"><i class="ico24 ico24_scale"></i></button>
                 </div>
             </div>
-            <div class="map__viwer"></div>
+            <div class="map__viwer">
+                <!--
+                    frame 별 색상이 다름.
+                    - .frame--01
+                    - .frame--02
+                    - .frame--03
+                    - .frame--04
+                    - .frame--05
+                -->
+                <!-- 임시 태그 -->
+                <div class="frame--01" style="width: 100px; height: 100px; border: 1px dashed #ccc;">임시태그</div>
+                <div class="frame--02" style="width: 100px; height: 100px; border: 1px dashed #ccc;">임시태그</div>
+                <div class="frame--03" style="width: 100px; height: 100px; border: 1px dashed #ccc;">임시태그</div>
+                <div class="frame--04" style="width: 100px; height: 100px; border: 1px dashed #ccc;">임시태그</div>
+                <div class="frame--05" style="width: 100px; height: 100px; border: 1px dashed #ccc;">임시태그</div>
+                <!-- 임시 태그 -->
+                <div class="drag-item">
+                    <div>
+                        <i class="ico ico24_arrow-left-right-01-dark"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
  </div>
 
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script src="../resources/js/datatables/datatables.js"></script>
 </body>
 
+
+<script>
+    function handleChange (_this) {
+        console.log(_this)
+    }
+</script>
 
 
 <!-- /build:script-->

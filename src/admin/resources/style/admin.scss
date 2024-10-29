@@ -1,5 +1,6 @@
 @import "./valuable";
 @import "./mixin";
+@import "./colorset";
 
 :root {
     font-family: Inter, sans-serif;
@@ -13,6 +14,29 @@
     }
 }
 
+.frame {
+
+    &--01 {
+        background-color: $legend-of-change-05;
+    }
+
+    &--02 {
+        background-color: $legend-of-change-04;
+    }
+
+    &--03 {
+        background-color: $legend-of-change-03;
+    }
+
+    &--04 {
+        background-color: $legend-of-change-02;
+    }
+
+    &--05 {
+        background-color: $legend-of-change-01;
+    }
+}
+
 .ico, .ico18, .ico24 {
     display: inline-block;
 }
@@ -21,7 +45,7 @@
     
 }
 .container {
-    // background-color: gray;
+    background-color: #f9f9f9;
 }
 
 .wrapper--main {

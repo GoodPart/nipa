@@ -9,44 +9,68 @@
         // height: 10px;
     // }
   
-    ::-webkit-scrollbar-thumb {
-        background: #bdbdbd;
-        border: 5px solid #ffffff;
-        border-top: none;
-        border-bottom: none;
-        border-radius: 12px;
-    }
+    
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #a3a3a3;
-    }
-
-    ::-webkit-scrollbar-thumb:active {
-        background: #a3a3a3;
-    }
+    
 
      @if $type == 1 {
+        ::-webkit-scrollbar-thumb {
+            background: #bdbdbd;
+            border: 5px solid #ffffff;
+            border-top: none;
+            border-bottom: none;
+            border-radius: 8px;
+        }
        ::-webkit-scrollbar-track {
             background: #ffffff;
             border: 0px none #ffffff;
             border-radius: 0px;
         }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3a3a3;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            background: #a3a3a3;
+        }
+        ::-webkit-scrollbar-track:hover {
+            background: #ffffff;
+        }
+
+        ::-webkit-scrollbar-track:active {
+            background: #ffffff;
+        }
     }
     @else if $type == 2 {
+        ::-webkit-scrollbar-thumb {
+            background: #bdbdbd;
+            border: 5px solid #e6e6e6;
+            border-top: none;
+            border-bottom: none;
+            border-radius: 8px;
+        }
         ::-webkit-scrollbar-track {
             background: #e6e6e6;
             border: 0px none #ffffff;
             border-radius: 0px;
         }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3a3a3;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            background: #a3a3a3;
+        }
+        ::-webkit-scrollbar-track:hover {
+            background: #e6e6e6;
+        }
+
+        ::-webkit-scrollbar-track:active {
+            background: #e6e6e6;
+        }
     }
 
-    ::-webkit-scrollbar-track:hover {
-        background: #ffffff;
-    }
-
-    ::-webkit-scrollbar-track:active {
-        background: #ffffff;
-    }
+    
 
     ::-webkit-scrollbar-corner {
         background: transparent;
@@ -54,7 +78,18 @@
 }
 
 @mixin boxShadow() {
-    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    // -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    // -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
+    // box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
+
+    box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.15), 0px 0px 4px -3px rgba(0, 0, 0, 0.15);
+-webkit-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.15), 0px 0px 4px -3px rgba(0,0,0,0.15);
+-moz-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.15), 0px 0px 4px -3px rgba(0,0,0,0.15);
+}
+
+@mixin ellipse() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }

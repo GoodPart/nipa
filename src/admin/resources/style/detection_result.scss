@@ -5,6 +5,31 @@
     padding: 54px 39px 61px 60px;
     height: calc(100% - 80px);
 
+    .drag-item {
+        z-index: 100;
+        position: absolute;
+        background-color: #4B5070;
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        
+        div {
+            cursor: grab;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-color: #4B5070;
+            border-radius: 20px;
+        }
+    }
 
     button {
         cursor: pointer;
@@ -12,6 +37,7 @@
         border-radius: 4px;
         border: none;
         color: #fff;
+        font-weight: 600;
         &.warring {
             background-color: #FF5757;
         }
@@ -39,7 +65,8 @@
 
         &:first-child {
             gap: 12px;
-            span {
+            span:not(.state) {
+                @include ellipse();
                 font-size: 28px;
                 font-weight: bold;
                 line-height: 30px;
@@ -66,6 +93,10 @@
         &.wrapper__content--column {
             flex-direction: column;
         }
+
+        &.flex_none {
+            display: inherit;
+        }
     }
 
     .info-view {
@@ -74,28 +105,102 @@
         flex-direction: column;
         gap: 12px;
 
+        @include scrollStyle($type : 2);
+
         .info-view__item {
-            @include scrollStyle();
             @include boxShadow();
             overflow-y: auto;
             padding: 8px 0 8px 12px ;
             border-radius: 8px;
+            background-color: #fff;
 
             .form__list {
                 // margin: 8px 0 8px 12px;
             }
 
             &--1 {
-                min-height: 384px;
-                height: 384px;
+                min-height: 406px;
+                height: 406px;
+
+                .form__item--result {
+                    position: relative;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: -4px;
+                        left: 0;
+                        display: block;
+                        width: calc(100% - 14.75px);
+                        height: 2px;
+                        background-color: #e0e0e0;
+                    }
+                }
             }
             &--2 {
                 min-height: 298px;
                 height: 298px;
+
+                .form .form__title_desc .desc:not(.form .form__title_desc .desc:only-child) {
+                    padding : 0 8px 0 0;
+                }
+
+                .form.form__grid-checkbox ul > li {
+                    flex: .5;
+                }
+                .form.form__grid-checkbox ul > li input[type='checkbox'] + label {
+                    cursor: pointer;
+                    border-color: #E2E8F0;
+                    width: 100%;
+                    height: 30px;
+                    justify-content: flex-start;
+                    transition: .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    .legend-label {
+                        opacity: 0.2;
+                        transition: .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        filter: grayscale(1);
+                    }
+                    .legend-txt {
+                        opacity: 0.3;
+                    }
+                }
+                .form.form__grid-checkbox ul > li input[type='checkbox']:checked + label {
+                    background-color: #fff;
+                    color: #000;
+                    .legend-label, .legend-txt {
+                        opacity: 1;
+                    }
+                    .legend-label {
+                        filter: grayscale(0);
+                    }
+                }
+
+                .form__grid-checkbox .wrapper{
+                    gap: 6px;
+                }
+                .form__grid-checkbox input +  label .legend-label {
+                    width: 24px;
+                    height: 16px;
+                    border-radius: 4px;
+                    margin: 0 6px;
+                } 
+                .form__grid-checkbox input +  label .legend-txt {
+                    font-size: 13px;
+                    line-height: 1.4;
+                } 
             }
             &--3 {
+                padding-right: 12px;
                 min-height: 97px;
                 height: 97px;
+                .title {
+                    height: 28px;
+                    padding-right: 0 !important;
+                }
+                .desc {
+                    padding: 0 !important;
+                    width: 100%;
+                }
             }
             &--4 {
                 position: relative;
@@ -103,8 +208,30 @@
 
                 > div {
                     position: absolute;
+                    width: calc(100% - 12px);
                 }
             }
+        }
+    }
+    .legend-viwer {
+        margin-top: 4px;
+        width: 100%;
+
+        .legend-color {
+            width: 100%;
+            height: 24px;
+            background: rgb(255, 81, 81);
+            background: linear-gradient(90deg, rgba(255, 81, 81, 0.75) 0%, rgba(255, 81, 81, 0.55) 25%, rgba(255, 81, 81, 0.25) 50%, rgba(255, 81, 81, 0.05) 75%, rgba(255, 81, 81, 0) 100%);
+            border-radius: 4px;
+        }
+        .legend-number ul{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4px;
+        }
+        .legend-number li {
+            font-size: 12px;
+            color: #6e6e6e;
         }
     }
     .map-view {
@@ -115,6 +242,8 @@
             font-weight: 500;
             padding: 0 9px;
             border-radius: 23px;
+            padding: 0 11px;
+            line-height: 24px;
             &.completed {
                 color: #7885F7;
                 background-color: rgba(120, 163,247, 0.15);
@@ -147,8 +276,12 @@
         }
     }
     .map__viwer {
+        position: relative;
         margin-top: 17px;
         height: inherit;
         background-color: gray;
+
+
+        
     }
 }

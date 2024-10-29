@@ -5,37 +5,41 @@
 [class*='ico_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 96px 90px;
+  background-size: 96px 96px;
 }
 [class*='ico18_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 96px 90px;
+  background-size: 96px 96px;
 }
 [class*='ico24_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 96px 90px;
+  background-size: 96px 96px;
 }
 [class*='ico24-'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 96px 90px;
+  background-size: 96px 96px;
 }
 
 .ico18_check-false {
   width: 18px; height: 18px;
-  background-position: 0px -72px;
+  background-position: -24px -72px;
 }
 .ico18_check-true {
   width: 18px; height: 18px;
-  background-position: -18px -72px;
+  background-position: -42px -72px;
 }
 .ico18_search  {
   width: 18px; height: 18px;
-  background-position: -36px -72px;
+  background-position: -60px -72px;
 }
 .ico24_Info_circle {
+  width: 24px; height: 24px;
+  background-position: -24px -48px;
+}
+.ico24_arrow-left-right-01-dark {
   width: 24px; height: 24px;
   background-position: 0px 0px;
 }
@@ -65,23 +69,23 @@
 }
 .ico24_minus-01--light {
   width: 24px; height: 24px;
-  background-position: -24px -48px;
+  background-position: -48px -48px;
 }
 .ico24_more {
   width: 24px; height: 24px;
-  background-position: -48px -48px;
+  background-position: -72px 0px;
 }
 .ico24_plus-01--light {
   width: 24px; height: 24px;
-  background-position: -72px 0px;
+  background-position: -72px -24px;
 }
 .ico24_scale {
   width: 24px; height: 24px;
-  background-position: -72px -24px;
+  background-position: -72px -48px;
 }
 .ico24_system {
   width: 24px; height: 24px;
-  background-position: -72px -48px;
+  background-position: 0px -72px;
 }
 
 
@@ -92,7 +96,7 @@
             [class*='ico_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(192px / 2) calc(180px / 2)  ;
+                background-size: calc(192px / 2) calc(192px / 2)  ;
             }
 }
 @media (-webkit-min-device-pixel-ratio: 2),
@@ -100,7 +104,7 @@
             [class*='ico18_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(192px / 2) calc(180px / 2)  ;
+                background-size: calc(192px / 2) calc(192px / 2)  ;
             }
 }
 
@@ -110,7 +114,7 @@
             [class*='ico24_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(192px / 2) calc(180px / 2)  ;
+                background-size: calc(192px / 2) calc(192px / 2)  ;
             }
 }
 
@@ -120,6 +124,6 @@
             [class*='ico24-'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(192px / 2) calc(180px / 2)  ;
+                background-size: calc(192px / 2) calc(192px / 2)  ;
             }
 }
