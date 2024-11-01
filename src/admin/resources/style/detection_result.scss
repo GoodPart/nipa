@@ -28,6 +28,9 @@
 .wrapper--detection_result {
     padding: 54px 39px 61px 60px;
     height: calc(100% - 80px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     .search {
         width: 320px;
     }
@@ -114,7 +117,7 @@
 
     .wrapper__content {
         display: flex;
-        gap: 12px;
+        gap: 16px;
         // height: inherit;
         height: calc(100% - 41px - 24px);
         &.wrapper__content--column {
@@ -173,7 +176,7 @@
                 }
 
                 .form.form__grid-checkbox ul > li {
-                    flex: .5;
+                    width: calc(50% - 6px);
                 }
                 .form.form__grid-checkbox ul > li input[type='checkbox'] + label {
                     cursor: pointer;
@@ -189,6 +192,7 @@
                     }
                     .legend-txt {
                         opacity: 0.3;
+                        font-weight: normal;
                     }
                 }
                 .form.form__grid-checkbox ul > li input[type='checkbox']:checked + label {
@@ -285,7 +289,7 @@
     }
     .map__viwer {
         position: relative;
-        margin-top: 17px;
+        margin-top: 18px;
         height: inherit;
         background-color: gray;
 

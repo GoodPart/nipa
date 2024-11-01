@@ -58,7 +58,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -80,7 +80,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -104,7 +104,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -129,7 +129,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -154,7 +154,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -178,7 +178,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -203,7 +203,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -228,7 +228,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -253,7 +253,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -278,7 +278,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -303,7 +303,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -328,7 +328,7 @@
                         </td>
                         <td>
                             <div class="icon--border">
-                                <i class="ico24 ico24_download-01--light"></i>
+                                <i class="ico24 ico24_download-01-02--light"></i>
                             </div>
                         </td>
                         <td>
@@ -353,6 +353,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
     <script src="../resources/js/datatables/datatables.js"></script>
+    <script src="../resources/js/common.js"></script>
 </body>
 
 <script>
@@ -363,12 +364,11 @@
         ordering: false,
         searching: false,
         pagingType : 'simple',
-        // autoWidth: false,
         columnDefs: [
             { targets: 0, width: '454px' },
-            { targets: 1, width: '151px' },
-            { targets: 2, width: '197px', className : 'dt-body-center' },
-            { targets: 3, width: '197px', className : 'dt-body-center' },
+            { targets: 1, width: '127px', className : 'symbol-state' },
+            { targets: 2, width: '169px', className : 'dt-body-center' },
+            { targets: 3, width: '169px', className : 'dt-body-center' },
             { targets: 4, width: '101px', className : 'dt-body-center' },
             { targets: 5, width: '74px', className : 'dt-body-center' },
         ],
@@ -376,6 +376,10 @@
             info: "_START_-_END_ of _TOTAL_",
             entries: {
                 _: '',
+            },
+            paginate : {
+                // next: '다음',
+                // previous: '이전'
             }
        }
     });

@@ -33,6 +33,7 @@
 
         &.confirm {
             background-color: #3056D3;
+            border-color: #3056D3;
             color: #fff;
         }
     }
@@ -52,12 +53,15 @@
     &.form__label--icon {
         background-color: #fff;
         padding: 12px 12px 12px 40px;
+        display: flex;
+        align-items: center;
         
         input[type='text'] {
             border: none;
             font-size: 16px;
             outline: none;
             width: 100%;
+            line-height: 1.4;
         }
         input[type='text']::placeholder {
             color: #64748B;
@@ -83,15 +87,39 @@
                 border: none;
                 padding: 0;
                 margin: 0;
-            }
-            button i {
-                opacity: 0.2;
-                margin: 2px;
+                
+                &.disabled i {
+                    opacity: .3;
+                }
+
+                i {
+                    margin: 2px;
+                }
             }
 
-            button.show i{
-                opacity: 1;
-            }
+            // button {
+            //     display: flex;
+            //     background-color: #fff;
+            //     border: none;
+            //     border-radius: 50px;
+            //     padding: 0;
+
+            //     &.disabled i {
+            //         opacity: .3;
+            //     }
+
+            //     i {
+            //         margin: 2px;
+            //     }
+            // }
+            // button i {
+            //     opacity: 0.2;
+            //     margin: 2px;
+            // }
+
+            // button.show i{
+            //     opacity: 1;
+            // }
         }
         .title {
             padding: 0 8px 0 0px;
@@ -296,7 +324,7 @@
             padding: 0;
 
             &.disabled i {
-                opacity: .1;
+                opacity: .3;
             }
 
             i {
@@ -368,4 +396,217 @@
         }
     }
 
+
+
+
+}
+
+.button-box {
+    @include boxShadow();
+    cursor: pointer;
+    position: absolute;
+    bottom: 290px;
+    right: 16px;
+    border-radius: 4px;
+    
+    input {
+        display: none;
+    }
+    
+    input[type='checkbox'] + label {
+        cursor: pointer;
+        display: flex;
+        padding: 8px;
+    }
+    input[type='checkbox']:checked  + label {
+        background-color: #F0F4FF;
+        border-radius: 4px;
+
+        & + .form__list {
+            display: flex
+        }
+    }
+
+    .form__list {
+        @include boxShadow();
+        position: absolute;
+        top: 0;
+        left: -104px;
+        width: 92px;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 4px 0;
+        display: none;
+        align-items: center;
+        gap: 0;
+
+        //드레그 방지
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+
+        li {
+            padding: 2.5px 0;
+            font-size: 14px;
+            color: #6E6E6E;
+            width: 100%;
+            text-align: center;
+            line-height: 1.4;
+        }
+        li.active,
+        li:hover {
+            background-color: #F0F4FF;
+        }
+    }
+}
+// 지도 축척률 
+.scale-box {
+    position: absolute;
+    top: -190px;
+    right: -70px;
+    transform: rotate(-90deg);
+    width: 210px;
+    box-shadow: 4px 4px 6px 0px #0000001A, 0px 0px 4px 0px #00000026;
+    border-radius: 4px;
+    // background-color: #fff;
+    transition: bottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0s;
+
+    &.left {
+        right: inherit;
+        left: -74px;
+    }
+
+    &.move {
+        // bottom: 138px;
+        bottom: 150px;
+    }
+
+    i {
+        transform: rotate(-90deg)
+    }
+
+    button {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+
+}
+
+.ui-slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    appearance: none;
+    border-radius: 6px;
+
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
+    .sub-label+.range-slider {
+        padding: 0 8px;
+    }
+
+    .range-slider {
+        display: flex;
+        width: 100%;
+        padding: 0 8px 0 0;
+    }
+
+    .range-slider [type="range"] {
+        width: 100%;
+        -webkit-appearance: none;
+        height: 8px;
+        border-radius: 6px;
+        // background: $grayscale-60;
+        background-color: #171721;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .range-slider [type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        // background: $monochrome-30;
+        background-color: #171721;
+        border: 2px solid #FFFFFF;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px 0px rgba(119, 161, 170, 0.4);
+        transition: box-shadow .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:hover {
+            box-shadow: 0px 2px 4px 8px rgba(119, 161, 170, 0.3);
+        }
+
+        &:active {
+            box-shadow: 0px 2px 1px 12px rgba(119, 161, 170, 0.5);
+        }
+    }
+
+    .range-slider [type="range"]::-moz-slider-thumb {
+        cursor: pointer;
+    }
+
+    .range-slider [type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        // background: $monochrome-30;
+        background-color: #171721;
+        border: 2px solid #FFFFFF;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px 0px rgba(119, 161, 170, 0.4);
+        transition: box-shadow .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:hover {
+            box-shadow: 0px 2px 4px 8px rgba(119, 161, 170, 0.3);
+        }
+
+        &:active {
+            box-shadow: 0px 2px 1px 12px rgba(119, 161, 170, 0.5);
+        }
+    }
+
+    .range-slider+input {
+        margin-left: 4px;
+        text-align: center;
+    }
+}
+
+.scale-box__value {
+    position: absolute;
+    bottom: 12px;
+    right: 8px;
+    width: 78px;
+    text-align: center;
+    transition: bottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0s;
+
+    &.left {
+        right: inherit;
+        left: 12px;
+    }
+
+    //메인 페이지 타임라인 영역 이동 클래스
+    &.move {
+        bottom: 12px;
+    }
+
+    img {
+        margin-top: 9px;
+    }
+
+    span {
+        // @include text-style($style : "paragraph-05", $weight : 700);
+        // padding-top: 9px;
+        display: block;
+        // color: $monochrome2-10;
+        text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    }
 }

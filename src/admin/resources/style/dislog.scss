@@ -183,6 +183,7 @@ dialog {
                     }
                 }
 
+                @include scrollStyle($type : 2);
                 & > div .scroll-wrapper {
                     overflow-y: auto;
                     height: 516px;

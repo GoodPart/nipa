@@ -69,7 +69,9 @@
                       <div class="desc">
                         <span>xxxxx도엽_23년.tif</span>
                         <div class="function">
-                          <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                          <button type="button" onclick="handleChange(this)">
+                            <i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -82,7 +84,7 @@
                       <div class="desc">
                         <span>xxxxx도엽_24년.tif</span>
                         <div class="function">
-                          <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                         </div>
                       </div>
                     </div>
@@ -98,28 +100,26 @@
                       <div class="desc">
                         <span>xxxxx도엽_23_24.tif</span>
                         <div class="function">
-                          <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                  <li class="form__item">
-                    <div class="form__title_desc">
-                      <div class="title">
-                        <span>Detection Source</span>
+                      <div class="desc">
+                        <span>xxxxx도엽_23_24.tif</span>
+                        <div class="function">
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
+                        </div>
                       </div>
                       <div class="desc">
-                        <span>xxxxx도엽_23년.tif</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="form__item">
-                    <div class="form__title_desc">
-                      <div class="title">
-                        <span>Detection Target</span>
+                        <span>xxxxx도엽_23_24.tif</span>
+                        <div class="function">
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
+                        </div>
                       </div>
                       <div class="desc">
-                        <span>xxxxx도엽_24년.tif</span>
+                        <span>xxxxx도엽_23_24.tif</span>
+                        <div class="function">
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -132,7 +132,7 @@
                       <div class="title">
                         <span>Legend of Detection</span>
                         <div class="function">
-                          <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                         </div>
                       </div>
                       <div class="desc">
@@ -231,7 +231,7 @@
                       <div class="title">
                         <span>Legend of Changes</span>
                         <div class="function">
-                          <button type="button" class="show"><i class="ico24 ico24_eye"></i></button>
+                          <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                         </div>
                       </div>
                       <div class="desc">
@@ -266,31 +266,31 @@
                         <div class="desc">
                           <span>xxxxx도엽_23_24.tif</span>
                           <div class="function">
-                            <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                            <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                           </div>
                         </div>
                         <div class="desc">
                           <span>xxxxx도엽_23_24.tif</span>
                           <div class="function">
-                            <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                            <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                           </div>
                         </div>
                         <div class="desc">
                           <span>xxxxx도엽_23_24.tif</span>
                           <div class="function">
-                            <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                            <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                           </div>
                         </div>
                         <div class="desc">
                           <span>xxxxx도엽_23_24.tif</span>
                           <div class="function">
-                            <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                            <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                           </div>
                         </div>
                         <div class="desc">
                           <span>xxxxx도엽_23_24.tif</span>
                           <div class="function">
-                            <button type="button"><i class="ico24 ico24_eye-slash"></i></button>
+                            <button type="button" onclick="handleChange(this)"><i class="ico24 ico24_eye" data-check="ico24_eye" data-uncheck="ico24_eye-slash"></i></button>
                           </div>
                         </div>
                       </div>
@@ -347,10 +347,35 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="></script>
     <script src="../resources/js/datatables/datatables.js"></script>
+    <script src="../resources/js/common.js"></script>
   </body>
   <script>
-    function handleChange(_this) {
-      console.log(_this)
-    }
+    const container = document.querySelector(".map__viwer");
+    const target = container.querySelector(".drag-item");
+    let isDragging = null;
+    let originX = null;
+    target.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      originX = e.clientX;
+      originLeft = target.offsetLeft;
+    })
+    document.addEventListener("mouseup", (e) => {
+      isDragging = false;
+    })
+    document.addEventListener("mousemove", (e) => {
+      const {
+        width: containerWidth,
+        height: containerHeight
+      } = container.getBoundingClientRect();
+      const {
+        width: targetWidth,
+        height: targetHeight
+      } = target.getBoundingClientRect();
+      if (isDragging) {
+        const diffX = e.clientX - originX;
+        const endOfPoint = containerWidth - targetWidth;
+        target.style.left = `${Math.min(Math.max(0, originLeft + diffX) , endOfPoint)}px`;
+      }
+    })
   </script> <!-- /build:script-->
 </html>

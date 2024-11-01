@@ -227,6 +227,9 @@ gulp.task('watch', () => {
         //images
         gulp.watch(`${DEV_PATH.RESOURCES.IMAGES}/**/*`, gulp.series(['images']));
 
+        //js
+        gulp.watch([`${DEV_PATH.RESOURCES}/js/**/*`, `${DEV_PATH.RESOURCES}/js/*`], gulp.series(['js']));
+
 
         resolve();
     })

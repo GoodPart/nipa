@@ -18,7 +18,14 @@ table.dataTable>tbody>tr {
     td {
         position: relative;
         vertical-align: middle;
-
+    }
+    td div {
+        padding-left: 12px;
+    }
+    .symbol-state {
+        min-width: 171px;
+        max-width: 171px;
+        width: 171px;
     }
 }
 table.dataTable>tbody>tr>th,
@@ -27,7 +34,11 @@ table.dataTable>tbody>tr>td {
     height: 52px;
 
     .state-symbol {
-        padding: 0;
+        margin: 0 auto;
+        // padding: 0;
+        // max-width: 127px;
+        padding: 0 8px; 
+        max-width: 147px;
     }
 
     .icon {
@@ -35,8 +46,10 @@ table.dataTable>tbody>tr>td {
         align-items: center;
         gap: 10px;
         height: 100%;
+        cursor: pointer;
 
         &--border {
+        cursor: pointer;
             display: inline-block;
             padding: 2px;
             border : 1px solid #bdbdbd;
@@ -48,6 +61,10 @@ table.dataTable>tbody>tr>td {
 table.dataTable.stripe>tbody>tr:nth-child(odd)>*,
 table.dataTable.display>tbody>tr:nth-child(odd)>* {
     box-shadow: none;
+}
+table.dataTable.hover>tbody>tr:hover>*,
+table.dataTable.display>tbody>tr:hover>* {
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.035);
 }
 table.dataTable.row-border > tbody > tr > *, table.dataTable.display > tbody > tr > * {
     border-top: none;
@@ -66,8 +83,17 @@ table.dataTable > tbody > tr > td:first-child {
 }
 
 
+div.dt-container .dt-paging nav {
+    display: flex;
+    gap: 12px;
+}
 div.dt-container .dt-paging .dt-paging-button {
     background-color: #3056d3;
+    color: #fff !important;
+    border-radius: 4px;
+}
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background: #3056d3;
 }
 
 
@@ -76,8 +102,11 @@ div.dt-container .dt-paging .dt-paging-button {
     padding: 12px;
     background-color: #fff;
     border-radius: 8px;
+    @include boxShadow();
 
     .function_button {
+        z-index: 100;
+        cursor: pointer;
         position: absolute;
         top: 17px;
         right: 12px;
@@ -90,6 +119,7 @@ div.dt-container .dt-paging .dt-paging-button {
 
     .dt-info {
         margin-left: 20px;
+        font-weight: 500;
     }
     .dt-paging {
         margin-right: 20px;
@@ -106,10 +136,15 @@ div.dt-container .dt-paging .dt-paging-button {
     select {
         width: 70px;
         height: 33px;
+        font-size: 16px;
+    }
+
+    label {
+        font-weight: 500;
     }
 }
 div.dt-container select.dt-input {
-    padding: 0 15px;
+    padding: 0 0 0 13px;
 }
 
 .table-wrap {
@@ -118,7 +153,7 @@ div.dt-container select.dt-input {
         border-color: #E2E8F0 !important;
     }
     .dt-scroll-headInner {
-        border-top: 1px solid red;
+        border-top: 1px solid
     }
 }
 

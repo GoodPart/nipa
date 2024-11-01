@@ -45,11 +45,13 @@
     
 }
 .container {
-    background-color: #f9f9f9;
+    // background-color: #f9f9f9;
 }
 
 .wrapper--main {
     position: relative;
+    width: 100%;
+    height: calc(100% - 80px);
 
     .search {
         position: absolute;
@@ -144,4 +146,10 @@
 
 .main-film {
     height: 740px;
+}
+
+.map-functions {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
 }
