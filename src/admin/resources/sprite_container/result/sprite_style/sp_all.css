@@ -5,39 +5,39 @@
 [class*='ico_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 114px 96px;
+  background-size: 120px 96px;
 }
 [class*='ico18_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 114px 96px;
+  background-size: 120px 96px;
 }
 [class*='ico24_'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 114px 96px;
+  background-size: 120px 96px;
 }
 [class*='ico24-'] {
   background-image: url('../sprite_images/sp_all.png');
   background-repeat: no-repeat;
-  background-size: 114px 96px;
+  background-size: 120px 96px;
 }
 
 .ico18_check-false {
   width: 18px; height: 18px;
-  background-position: -72px -72px;
+  background-position: -96px -24px;
 }
 .ico18_check-true {
   width: 18px; height: 18px;
-  background-position: -96px 0px;
+  background-position: -96px -42px;
 }
 .ico18_search  {
   width: 18px; height: 18px;
-  background-position: -96px -18px;
+  background-position: -96px -60px;
 }
 .ico24_Info_circle {
   width: 24px; height: 24px;
-  background-position: -48px -48px;
+  background-position: -72px -24px;
 }
 .ico24_arrow-left-right-01-dark {
   width: 24px; height: 24px;
@@ -51,49 +51,57 @@
   width: 24px; height: 24px;
   background-position: 0px -24px;
 }
-.ico24_download-01--light {
+.ico24_arrow_right {
   width: 24px; height: 24px;
   background-position: -24px -24px;
 }
-.ico24_download-01-02--light {
+.ico24_download-01--light {
   width: 24px; height: 24px;
   background-position: -48px 0px;
 }
-.ico24_eye-slash {
+.ico24_download-01-01--light {
   width: 24px; height: 24px;
   background-position: -48px -24px;
 }
-.ico24_eye {
+.ico24_download-01-02--light {
   width: 24px; height: 24px;
   background-position: 0px -48px;
 }
-.ico24_file-delete-02--light {
+.ico24_eye-slash {
   width: 24px; height: 24px;
   background-position: -24px -48px;
 }
-.ico24_minus-01--light {
+.ico24_eye {
+  width: 24px; height: 24px;
+  background-position: -48px -48px;
+}
+.ico24_file-delete-02--light {
   width: 24px; height: 24px;
   background-position: -72px 0px;
 }
-.ico24_more {
-  width: 24px; height: 24px;
-  background-position: -72px -24px;
-}
-.ico24_plus-01--light {
+.ico24_minus-01--light {
   width: 24px; height: 24px;
   background-position: -72px -48px;
 }
-.ico24_scale {
+.ico24_more {
   width: 24px; height: 24px;
   background-position: 0px -72px;
 }
-.ico24_system {
+.ico24_plus-01--light {
   width: 24px; height: 24px;
   background-position: -24px -72px;
 }
-.ico_file-delete-02--light {
+.ico24_scale {
   width: 24px; height: 24px;
   background-position: -48px -72px;
+}
+.ico24_system {
+  width: 24px; height: 24px;
+  background-position: -72px -72px;
+}
+.ico_file-delete-02--light {
+  width: 24px; height: 24px;
+  background-position: -96px 0px;
 }
 
 
@@ -104,7 +112,7 @@
             [class*='ico_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(228px / 2) calc(192px / 2)  ;
+                background-size: calc(240px / 2) calc(192px / 2)  ;
             }
 }
 @media (-webkit-min-device-pixel-ratio: 2),
@@ -112,7 +120,7 @@
             [class*='ico18_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(228px / 2) calc(192px / 2)  ;
+                background-size: calc(240px / 2) calc(192px / 2)  ;
             }
 }
 
@@ -122,7 +130,7 @@
             [class*='ico24_'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(228px / 2) calc(192px / 2)  ;
+                background-size: calc(240px / 2) calc(192px / 2)  ;
             }
 }
 
@@ -132,6 +140,6 @@
             [class*='ico24-'] {
               background-image: url('../sprite_images/sp_all@2x.png');
               background-repeat: no-repeat;
-                background-size: calc(228px / 2) calc(192px / 2)  ;
+                background-size: calc(240px / 2) calc(192px / 2)  ;
             }
 }
